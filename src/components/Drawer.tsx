@@ -20,6 +20,7 @@ import { env } from "../env/client.mjs";
 import { api } from "../utils/api";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
+import GreenChartIcon from '../../public/GreenChartIcon.png';
 
 const Drawer = ({
   showHelp,
@@ -93,7 +94,7 @@ const Drawer = ({
       >
         <div className="flex flex-col gap-1 overflow-hidden">
           <div className="mb-2 flex justify-center gap-2">
-            My Agent(s)
+            My Ai Coaches
             <button
               className={clsx(
                 showDrawer ? "-translate-x-2" : "translate-x-12",
@@ -154,9 +155,9 @@ const Drawer = ({
           />
           <DrawerItem icon={<FaCog />} text="Settings" onClick={showSettings} />
           <DrawerItem
-            icon={<FaGithub />}
-            text="GitHub"
-            href="https://github.com/reworkd/AgentGPT"
+            icon={<img height={16} width={16} alt={'greenchart'} src={GreenChartIcon.src}/>}
+            text="Greenchart"
+            href="https://greenchart.com"
             target="_blank"
           />
         </div>

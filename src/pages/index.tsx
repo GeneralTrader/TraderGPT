@@ -7,7 +7,7 @@ import ChatWindow from "../components/ChatWindow";
 import Drawer from "../components/Drawer";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import { FaRobot, FaStar } from "react-icons/fa";
+import { FaMoneyBillWave, FaRobot, FaStar } from "react-icons/fa";
 import PopIn from "../components/motions/popin";
 import { VscLoading } from "react-icons/vsc";
 import AutonomousAgent from "../components/AutonomousAgent";
@@ -21,6 +21,8 @@ import { useAgent } from "../hooks/useAgent";
 import { isEmptyOrBlank } from "../utils/whitespace";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useSettings } from "../hooks/useSettings";
+import GreenChartIcon from "../../public/GreenChartIcon.png";
+
 
 const Home: NextPage = () => {
   const [t] = useTranslation();
@@ -105,7 +107,7 @@ const Home: NextPage = () => {
 
   const proTitle = (
     <>
-      AgentGPT<span className="ml-1 text-amber-500/90">Pro</span>
+      DayTradeGPT<span className="ml-1 text-amber-500/90">Pro</span>
     </>
   );
 
@@ -145,13 +147,13 @@ const Home: NextPage = () => {
             >
               <div className="flex flex-row items-start shadow-2xl">
                 <span className="text-4xl font-bold text-[#C0C0C0] xs:text-5xl sm:text-6xl">
-                  Agent
+                  DayTrade
                 </span>
                 <span className="text-4xl font-bold text-white xs:text-5xl sm:text-6xl">
                   GPT
                 </span>
-                <PopIn delay={0.5} className="sm:absolute sm:right-0 sm:top-2">
-                  <Badge>Beta 🚀</Badge>
+                <PopIn delay={0.5} className="sm:absolute sm:-right-50 sm:top-2">
+                  <Badge>Beta 📈</Badge>
                 </PopIn>
               </div>
               <div className="mt-1 text-center font-mono text-[0.7em] font-bold text-white">
@@ -167,10 +169,8 @@ const Home: NextPage = () => {
               <ChatWindow
                 className="sm:mt-4"
                 messages={messages}
-                title={session?.user.subscriptionId ? proTitle : "AgentGPT"}
-                showDonation={
-                  status != "loading" && !session?.user.subscriptionId
-                }
+                title={session?.user.subscriptionId ? proTitle : "DayTradeGPT"}
+                showDonation={true}
                 onSave={
                   shouldShowSave
                     ? (format) => {
@@ -194,7 +194,6 @@ const Home: NextPage = () => {
                   inputRef={nameInputRef}
                   left={
                     <>
-                      <FaRobot />
                       <span className="ml-2">{t("AGENT_NAME")}</span>
                     </>
                   }
@@ -202,7 +201,7 @@ const Home: NextPage = () => {
                   disabled={agent != null}
                   onChange={(e) => setName(e.target.value)}
                   onKeyDown={(e) => handleKeyPress(e)}
-                  placeholder="AgentGPT"
+                  placeholder="Ai Coach Name"
                   type="text"
                 />
               </Expand>
@@ -210,8 +209,8 @@ const Home: NextPage = () => {
                 <Input
                   left={
                     <>
-                      <FaStar />
-                      <span className="ml-2">{t("AGENT_GOAL")}</span>
+                      <img height={30} width={30} alt={'greenchart'} src={GreenChartIcon.src}/>
+                      <span>{t("AGENT_GOAL")}</span>
                     </>
                   }
                   disabled={agent != null}

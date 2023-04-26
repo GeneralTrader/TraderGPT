@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { FaDiscord, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 import Dialog from "./Dialog";
+import GreenChartIcon from "../../public/GreenChartIcon.png";
 
 export default function HelpDialog({
   show,
@@ -13,44 +14,44 @@ export default function HelpDialog({
   const [t] = useTranslation();
   return (
     <Dialog
-      header={`${t("Welcome to AgentGPT 🤖")} `}
+      header={`${t("Welcome to DayTradeGPT 🤖📈")} `}
       isShown={show}
       close={close}
     >
       <div className="text-md relative flex-auto p-2 leading-relaxed">
         <p>
-          <strong>AgentGPT</strong>{" "}
+          <strong>DayTradeGPT</strong>{" "}
           {t(
             "allows you to configure and deploy Autonomous AI agents. Name your custom AI and have it embark on any goal imaginable. It will attempt to reach the goal by thinking of tasks to do, executing them, and learning from the results 🚀"
           )}
         </p>
         <div>
           <br />
-          {t(
-            "This platform is currently in beta, we are currently working on:"
-          )}
+          Currently in beta, we are actively enhancing our platform with:
           <ul className="ml-5 list-inside list-disc">
+            <li>A directory of popular AI Coach Goals 📁</li>
+            <li>Community Support 🪢</li>
             <li>{`${t("LONG_TERM_MEMORY")} 🧠`}</li>
             <li>{`${t("WEB_BROWSING")} 🌐`}</li>
             <li>{`${t("INTERACTION_WITH_WEBSITES_AND_PEOPLE")} 👨‍👩‍👦`}</li>
           </ul>
           <br />
-          <p className="mt-2">{t("Follow the journey below:")}</p>
+          <p className="mt-2">🚀 Join us on our journey by following the links below! 🚀</p>
         </div>
         <div className="mt-4 flex w-full items-center justify-center gap-5">
           <div
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
             onClick={() =>
-              window.open("https://discord.gg/jdSBAnmdnY", "_blank")
+              window.open("https://www.youtube.com/@traderspulse101", "_blank")
             }
           >
-            <FaDiscord size={30} />
+            <FaYoutube size={30} />
           </div>
           <div
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
             onClick={() =>
               window.open(
-                "https://twitter.com/asimdotshrestha/status/1644883727707959296",
+                "https://twitter.com/traderspulse101",
                 "_blank"
               )
             }
@@ -60,10 +61,10 @@ export default function HelpDialog({
           <div
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
             onClick={() =>
-              window.open("https://github.com/reworkd/AgentGPT", "_blank")
+              window.open("https://greenchart.com", "_blank")
             }
           >
-            <FaGithub size={30} />
+            <img height={30} width={30} alt={'greenchart'} src={GreenChartIcon.src}/>
           </div>
         </div>
       </div>

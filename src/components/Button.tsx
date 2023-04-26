@@ -37,7 +37,7 @@ const Button = forwardRef(
           props.disabled &&
             "cursor-not-allowed border-white/10 bg-zinc-900 text-white/30",
           props.disabled ||
-            "mou cursor-pointer bg-[#1E88E5]/70 text-white/80 hover:border-white/80 hover:bg-[#0084f7] hover:text-white hover:shadow-2xl",
+            "mou cursor-pointer bg-[#009b08]/70 text-white/80 hover:border-white/80 hover:bg-[#008607] hover:text-white hover:shadow-2xl",
           props.disabled || props.enabledClassName,
           props.className
         )}

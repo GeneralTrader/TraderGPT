@@ -16,7 +16,10 @@ module.exports = {
     extend: {
       boxShadow: {
         "3xl": "0 40px 70px -15px rgba(0, 0, 0, 0.40)" // Customize the shadow value according to your preferences.
-      }
+      },
+      inset: {
+        '-50': '-5rem',
+      },
     }
   },
   plugins: []

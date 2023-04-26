@@ -56,7 +56,7 @@ const AgentPage: NextPage = () => {
               .writeText(shareLink())
               .then(() => setShowCopied(true));
           }}
-          enabledClassName={"bg-green-600 hover:bg-green-400"}
+          enabledClassName={"bg-green-600 hover:bg-green-700"}
         >
           Share
         </Button>

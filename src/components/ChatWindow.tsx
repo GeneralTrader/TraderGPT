@@ -5,12 +5,12 @@ import {
   FaBrain,
   FaClipboard,
   FaCopy,
-  FaDatabase,
+  FaDatabase, FaFacebook, FaGoogle,
   FaImage,
-  FaListAlt,
-  FaPlayCircle,
+  FaListAlt, FaMailBulk, FaMailchimp, FaPinterest, FaPinterestP,
+  FaPlayCircle, FaRedditAlien,
   FaSave,
-  FaStar,
+  FaStar, FaTwitter
 } from "react-icons/fa";
 import PopIn from "./motions/popin";
 import Expand from "./motions/expand";
@@ -206,6 +206,41 @@ const MacWindowHeader = (props: HeaderProps) => {
     <PDFButton key="PDF" name="PDF" messages={props.messages} />,
   ];
 
+  const redirectToURL = (url: string) => {
+    window.open(url, '_blank');
+  };
+
+  const shareOptions = [
+    <WindowButton
+      key="Facebook"
+      delay={0.1}
+      onClick={(): void => redirectToURL('https://facebook.com')}
+      icon={<FaFacebook size={12} />}
+      name={'Facebook'}
+    />,
+    <WindowButton
+      key="Twitter"
+      delay={0.15}
+      onClick={(): void => redirectToURL('https://twitter.com')}
+      icon={<FaTwitter size={12} />}
+      name={"Twitter"}
+    />,
+    <WindowButton
+      key="Reddit"
+      delay={0.15}
+      onClick={(): void => redirectToURL('https://reddit.com')}
+      icon={<FaRedditAlien size={12} />}
+      name={"Reddit"}
+    />,
+    <WindowButton
+      key="Gmail"
+      delay={0.15}
+      onClick={(): void => redirectToURL('https://gmail.com')}
+      icon={<FaGoogle size={12} />}
+      name={"Gmail"}
+    />,
+  ];
+
   return (
     <div className="flex items-center gap-1 overflow-visible rounded-t-3xl p-3">
       <PopIn delay={0.4}>
@@ -215,7 +250,7 @@ const MacWindowHeader = (props: HeaderProps) => {
         <div className="h-3 w-3 rounded-full bg-yellow-500" />
       </PopIn>
       <PopIn delay={0.6}>
-        <div className="h-3 w-3 rounded-full bg-green-500" />
+        <div className="h-3 w-3 rounded-full bg-green-700" />
       </PopIn>
       <Expand
         delay={1}
@@ -231,17 +266,27 @@ const MacWindowHeader = (props: HeaderProps) => {
           icon={<FaSave size={12} />}
           name={t("Save")}
           styleClass={{
-            container: `relative bg-[#3a3a3a] md:w-20 text-center font-mono rounded-lg text-gray/50 border-[2px] border-white/30 font-bold transition-all sm:py-0.5 hover:border-[#1E88E5]/40 hover:bg-[#6b6b6b] focus-visible:outline-none focus:border-[#1E88E5]`,
+            container: `relative bg-[#3a3a3a] md:w-20 text-center font-mono rounded-lg text-gray/50 border-[2px] border-white/30 font-bold transition-all sm:py-0.5 hover:border-[#009b08]/40 hover:bg-[#6b6b6b] focus-visible:outline-none focus:border-[#009b08]`,
           }}
         />
       )}
+      <Menu
+        name={"Share"}
+        onChange={() => null}
+        items={shareOptions}
+        styleClass={{
+          container: "relative",
+          input: `bg-[#3a3a3a] w-28 animation-duration text-left px-4 text-sm p-1 font-mono rounded-lg text-gray/50 border-[2px] border-white/30 font-bold transition-all sm:py-0.5 hover:border-[#009b08]/40 hover:bg-[#6b6b6b] focus-visible:outline-none focus:border-[#009b08]`,
+          option: "w-full py-[1px] md:py-0.5",
+        }}
+      />
       <Menu
         name={t("Export")}
         onChange={() => null}
         items={exportOptions}
         styleClass={{
           container: "relative",
-          input: `bg-[#3a3a3a] w-28 animation-duration text-left px-4 text-sm p-1 font-mono rounded-lg text-gray/50 border-[2px] border-white/30 font-bold transition-all sm:py-0.5 hover:border-[#1E88E5]/40 hover:bg-[#6b6b6b] focus-visible:outline-none focus:border-[#1E88E5]`,
+          input: `bg-[#3a3a3a] w-28 animation-duration text-left px-4 text-sm p-1 font-mono rounded-lg text-gray/50 border-[2px] border-white/30 font-bold transition-all sm:py-0.5 hover:border-[#009b08]/40 hover:bg-[#6b6b6b] focus-visible:outline-none focus:border-[#009b08]`,
           option: "w-full py-[1px] md:py-0.5",
         }}
       />
@@ -271,7 +316,7 @@ const ChatMessage = ({ message }: { message: Message }) => {
 
   return (
     <div
-      className="mx-2 my-1 rounded-lg border-[2px] border-white/10 bg-white/20 p-1 font-mono text-sm hover:border-[#1E88E5]/40 sm:mx-4 sm:p-3 sm:text-base"
+      className="mx-2 my-1 rounded-lg border-[2px] border-white/10 bg-white/20 p-1 font-mono text-sm hover:border-[#009b08]/40 sm:mx-4 sm:p-3 sm:text-base"
       onMouseEnter={() => setShowCopy(true)}
       onMouseLeave={() => setShowCopy(false)}
       onClick={handleCopyClick}
@@ -329,22 +374,22 @@ const DonationMessage = () => {
   const [t] = useTranslation();
 
   return (
-    <div className="mx-2 my-1 flex flex-col gap-2 rounded-lg border-[2px] border-white/10 bg-blue-500/20 p-1 text-center font-mono hover:border-[#1E88E5]/40 sm:mx-4 sm:p-3 sm:text-base md:flex-row">
+    <div className="mx-2 my-1 flex flex-col gap-2 rounded-lg border-[2px] border-white/10 bg-green-700/20 p-1 text-center font-mono hover:border-[#009b08]/40 sm:mx-4 sm:p-3 sm:text-base md:flex-row">
       <div className="max-w-none flex-grow">
-        {`💝️ ${t("HELP_SUPPORT_THE_ADVANCEMENT_OF_AGENTGPT")} 💝️`}
+        DayTradeGPT Disclaimer
         <br />
-        {t("Please consider sponsoring the project on GitHub.")}
+        Please be aware that DayTradeGPT is currently in its beta stage. As such, the responses and suggestions provided by the AI Coach may not always be accurate or reliable. We strongly advise against taking any advice or making financial decisions based on the information generated by this tool. DayTradeGPT is intended for entertainment purposes only at this time. We cannot be held responsible for any outcomes resulting from the use of this tool, as it is merely a prototype for exploration and experimentation.
       </div>
-      <div className="flex items-center justify-center">
-        <Button
-          className="sm:text m-0 rounded-full text-sm "
-          onClick={() =>
-            void router.push("https://github.com/sponsors/reworkd-admin")
-          }
-        >
-          {`${t("SUPPORT_NOW")} 🚀`}
-        </Button>
-      </div>
+      {/*<div className="flex items-center justify-center">*/}
+      {/*  <Button*/}
+      {/*    className="sm:text m-0 rounded-full text-sm "*/}
+      {/*    onClick={() =>*/}
+      {/*      void router.push("https://github.com/sponsors/reworkd-admin")*/}
+      {/*    }*/}
+      {/*  >*/}
+      {/*    {`${t("SUPPORT_NOW")} 🚀`}*/}
+      {/*  </Button>*/}
+      {/*</div>*/}
     </div>
   );
 };

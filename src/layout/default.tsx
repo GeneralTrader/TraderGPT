@@ -22,7 +22,7 @@ const DefaultLayout = (props: LayoutProps) => {
       )}
     >
       <Head>
-        <title>AgentGPT</title>
+        <title>DayTradeGPT</title>
         <meta name="description" content={description} />
         <meta name="twitter:site" content="@AgentGPT" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -36,11 +36,11 @@ const DefaultLayout = (props: LayoutProps) => {
         <meta name="twitter:image:height" content="640" />
         <meta
           property="og:title"
-          content="AgentGPT: Autonomous AI in your browser 🤖"
+          content="DayTradeGPT: Autonomous AI for Day Traders"
         />
         <meta
           property="og:description"
-          content="Assemble, configure, and deploy autonomous AI Agents in your browser."
+          content="Design, refine, and leverage your AI-based Day Trading Coach."
         />
         <meta property="og:url" content="https://agentgpt.reworkd.ai/" />
         <meta
@@ -50,10 +50,6 @@ const DefaultLayout = (props: LayoutProps) => {
         <meta property="og:image:width" content="1280" />
         <meta property="og:image:height" content="640" />
         <meta property="og:type" content="website" />
-        <meta
-          name="google-site-verification"
-          content="sG4QDkC8g2oxKSopgJdIe2hQ_SaJDaEaBjwCXZNkNWA"
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DottedGridBackground
