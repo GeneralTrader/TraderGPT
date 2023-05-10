@@ -22,30 +22,30 @@ const DefaultLayout = (props: LayoutProps) => {
       )}
     >
       <Head>
-        <title>DayTradeGPT</title>
+        <title>DayTrade Ai</title>
         <meta name="description" content={description} />
-        <meta name="twitter:site" content="@AgentGPT" />
+        <meta name="twitter:site" content="@TraderGPT" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AgentGPT 🤖" />
+        <meta name="twitter:title" content="TraderGPT 📈" />
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content="https://agentgpt.reworkd.ai/banner.png"
+          content="https://tradergpt.greenchart.com/banner.png"
         />
         <meta name="twitter:image:width" content="1280" />
         <meta name="twitter:image:height" content="640" />
         <meta
           property="og:title"
-          content="DayTradeGPT: Autonomous AI for Day Traders"
+          content="DayTrade Ai: Autonomous AI for Day Traders"
         />
         <meta
           property="og:description"
           content="Design, refine, and leverage your AI-based Day Trading Coach."
         />
-        <meta property="og:url" content="https://agentgpt.reworkd.ai/" />
+        <meta property="og:url" content="https://tradergpt.greenchart.com/" />
         <meta
           property="og:image"
-          content="https://agentgpt.reworkd.ai/banner.png"
+          content="https://tradergpt.greenchart.com/banner.png"
         />
         <meta property="og:image:width" content="1280" />
         <meta property="og:image:height" content="640" />

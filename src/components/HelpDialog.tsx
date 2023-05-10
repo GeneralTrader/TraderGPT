@@ -14,13 +14,13 @@ export default function HelpDialog({
   const [t] = useTranslation();
   return (
     <Dialog
-      header={`${t("Welcome to DayTradeGPT 🤖📈")} `}
+      header={`${t("Welcome to DayTrade Ai 🤖📈")} `}
       isShown={show}
       close={close}
     >
       <div className="text-md relative flex-auto p-2 leading-relaxed">
         <p>
-          <strong>DayTradeGPT</strong>{" "}
+          <strong>DayTrade Ai</strong>{" "}
           {t(
             "allows you to configure and deploy Autonomous AI agents. Name your custom AI and have it embark on any goal imaginable. It will attempt to reach the goal by thinking of tasks to do, executing them, and learning from the results 🚀"
           )}

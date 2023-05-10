@@ -107,7 +107,7 @@ const Home: NextPage = () => {
 
   const proTitle = (
     <>
-      DayTradeGPT<span className="ml-1 text-amber-500/90">Pro</span>
+      DayTrade Ai<span className="ml-1 text-amber-500/90">Pro</span>
     </>
   );
 
@@ -150,7 +150,7 @@ const Home: NextPage = () => {
                   DayTrade
                 </span>
                 <span className="text-4xl font-bold text-white xs:text-5xl sm:text-6xl">
-                  GPT
+                  Ai
                 </span>
                 <PopIn delay={0.5} className="sm:absolute sm:-right-50 sm:top-2">
                   <Badge>Beta 📈</Badge>
@@ -169,7 +169,7 @@ const Home: NextPage = () => {
               <ChatWindow
                 className="sm:mt-4"
                 messages={messages}
-                title={session?.user.subscriptionId ? proTitle : "DayTradeGPT"}
+                title={session?.user.subscriptionId ? proTitle : "DayTrade Ai"}
                 showDonation={true}
                 onSave={
                   shouldShowSave
