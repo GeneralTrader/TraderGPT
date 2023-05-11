@@ -29,6 +29,7 @@ const Drawer = ({
 }: {
   showHelp: () => void;
   showSettings: () => void;
+  brand: string;
 }) => {
   const [t] = useTranslation();
   const [showDrawer, setShowDrawer] = useState(true);

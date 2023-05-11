@@ -10,6 +10,7 @@ export default function HelpDialog({
   brand
 }: {
   show: boolean;
+  brand: string;
   close: () => void;
 }) {
   console.log(globalThis.location);
