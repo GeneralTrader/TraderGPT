@@ -23,10 +23,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useSettings } from "../hooks/useSettings";
 import GreenChartIcon from "../../public/GreenChartIcon.png";
 
-
 const Home: NextPage = () => {
   const [t] = useTranslation();
   const { session, status } = useAuth();
+  const [brand, setBrand] = React.useState<string>("TRUSTHELIX");
   const [name, setName] = React.useState<string>("");
   const [goalInput, setGoalInput] = React.useState<string>("");
   const [agent, setAgent] = React.useState<AutonomousAgent | null>(null);
@@ -120,6 +120,7 @@ const Home: NextPage = () => {
   return (
     <DefaultLayout>
       <HelpDialog
+        brand={brand}
         show={showHelpDialog}
         close={() => setShowHelpDialog(false)}
       />
@@ -130,6 +131,7 @@ const Home: NextPage = () => {
       />
       <main className="flex min-h-screen flex-row">
         <Drawer
+          brand={brand}
           showHelp={() => setShowHelpDialog(true)}
           showSettings={() => setShowSettingsDialog(true)}
         />
@@ -209,8 +211,9 @@ const Home: NextPage = () => {
                 <Input
                   left={
                     <>
-                      <img height={30} width={30} alt={'greenchart'} src={GreenChartIcon.src}/>
-                      <span>{t("AGENT_GOAL")}</span>
+                      {brand === "GREENCHART" && <img height={30} width={30} alt={'greenchart'} src={GreenChartIcon.src}/>}
+                      {brand === "GREENCHART" && <span>{t("AGENT_GOAL")}</span>}
+                      {brand === "TRUSTHELIX" && <span>G{t("AGENT_GOAL")}</span>}
                     </>
                   }
                   disabled={agent != null}

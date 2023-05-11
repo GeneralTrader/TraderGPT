@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import {
   FaBars,
   FaCog,
-  FaDiscord,
+  FaDiscord, FaFirefoxBrowser,
   FaGithub,
   FaQuestionCircle,
   FaRobot,
@@ -11,7 +11,7 @@ import {
   FaSignInAlt,
   FaSignOutAlt,
   FaTwitter,
-  FaUser,
+  FaUser
 } from "react-icons/fa";
 import clsx from "clsx";
 import { useAuth } from "../hooks/useAuth";
@@ -25,6 +25,7 @@ import GreenChartIcon from '../../public/GreenChartIcon.png';
 const Drawer = ({
   showHelp,
   showSettings,
+  brand
 }: {
   showHelp: () => void;
   showSettings: () => void;
@@ -154,12 +155,18 @@ const Drawer = ({
             onClick={showHelp}
           />
           <DrawerItem icon={<FaCog />} text="Settings" onClick={showSettings} />
-          <DrawerItem
+          {brand === 'GREENCHART' && <DrawerItem
             icon={<img height={16} width={16} alt={'greenchart'} src={GreenChartIcon.src}/>}
             text="Greenchart"
             href="https://greenchart.com"
             target="_blank"
-          />
+          />}
+          {brand === 'TRUSTHELIX' && <DrawerItem
+            icon={<FaFirefoxBrowser />}
+            text="Trust Helix"
+            href="https://trusthelix.com"
+            target="_blank"
+          />}
         </div>
       </div>
     </>

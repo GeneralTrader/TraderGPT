@@ -1,16 +1,18 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaFirefoxBrowser, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 import Dialog from "./Dialog";
 import GreenChartIcon from "../../public/GreenChartIcon.png";
 
 export default function HelpDialog({
   show,
   close,
+  brand
 }: {
   show: boolean;
   close: () => void;
 }) {
+  console.log(globalThis.location);
   const [t] = useTranslation();
   return (
     <Dialog
@@ -58,14 +60,22 @@ export default function HelpDialog({
           >
             <FaTwitter size={30} />
           </div>
-          <div
+          {brand === 'GREENCHART' && <div
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
             onClick={() =>
               window.open("https://greenchart.com", "_blank")
             }
           >
             <img height={30} width={30} alt={'greenchart'} src={GreenChartIcon.src}/>
-          </div>
+          </div>}
+          {brand === 'TRUSTHELIX' && <div
+            className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
+            onClick={() =>
+              window.open("https://trusthelix.com", "_blank")
+            }
+          >
+            <FaFirefoxBrowser size={30} />
+          </div>}
         </div>
       </div>
     </Dialog>
