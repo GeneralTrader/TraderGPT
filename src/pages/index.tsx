@@ -26,7 +26,7 @@ import GreenChartIcon from "../../public/GreenChartIcon.png";
 const Home: NextPage = () => {
   const [t] = useTranslation();
   const { session, status } = useAuth();
-  const [brand, setBrand] = React.useState<string>("GREENCHART");
+  const [brand, setBrand] = React.useState<string>("TRUSTHELIX");
   const [name, setName] = React.useState<string>("");
   const [goalInput, setGoalInput] = React.useState<string>("");
   const [agent, setAgent] = React.useState<AutonomousAgent | null>(null);
