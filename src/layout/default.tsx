@@ -12,7 +12,7 @@ interface LayoutProps {
 
 const DefaultLayout = (props: LayoutProps) => {
   const [ t ] = useTranslation();
-  const [brand, setBrand] = React.useState<string>("TRUSTHELIX");
+  const [brand, setBrand] = React.useState<string>("GREENCHART");
   const description =
     t('Assemble, configure, and deploy autonomous AI Agents in your browser.');
   return (
